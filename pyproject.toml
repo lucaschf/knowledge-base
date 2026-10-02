@@ -1,0 +1,15 @@
+[project]
+name = "knowledge-base"
+version = "0.1.0"
+description = "Notas de engenharia, arquitetura e design de software — fonte da verdade em markdown."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mkdocs-material>=9.5",
+    "pymdown-extensions>=10.7",
+]
+
+[tool.uv]
+# O repositório costuma ficar num mount do Windows (/mnt/c) sob WSL, onde os
+# hardlinks padrão do uv falham silenciosamente. Copiar é robusto e portável.
+link-mode = "copy"

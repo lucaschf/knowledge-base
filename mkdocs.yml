@@ -1,0 +1,118 @@
+site_name: Base de Conhecimento
+site_description: Notas de engenharia, arquitetura e design de software — fonte da verdade em markdown.
+site_author: Lucas Cristovam
+site_url: https://lucaschf.github.io/knowledge-base/
+repo_url: https://github.com/lucaschf/knowledge-base
+repo_name: lucaschf/knowledge-base
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Modo claro
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Modo escuro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang: pt
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lucaschf
+
+nav:
+  - Início: index.md
+  - Modelagem de Domínio:
+      - modelagem-de-dominio/index.md
+      - Code Smells:
+          - modelagem-de-dominio/code-smells/index.md
+          - Primitive Obsession: modelagem-de-dominio/code-smells/primitive-obsession.md
+          - Stringly-Typed Code: modelagem-de-dominio/code-smells/stringly-typed.md
+          - Boolean Blindness: modelagem-de-dominio/code-smells/boolean-blindness.md
+          - Temporal Coupling: modelagem-de-dominio/code-smells/temporal-coupling.md
+          - Anemic Domain Model: modelagem-de-dominio/code-smells/anemic-domain-model.md
+          - Feature Envy: modelagem-de-dominio/code-smells/feature-envy.md
+          - Data Clumps: modelagem-de-dominio/code-smells/data-clumps.md
+          - Shotgun Surgery: modelagem-de-dominio/code-smells/shotgun-surgery.md
+          - Divergent Change: modelagem-de-dominio/code-smells/divergent-change.md
+  - DDD Estratégico:
+      - ddd-estrategico/index.md
+      - Subdomínios: ddd-estrategico/subdominios.md
+      - Bounded contexts: ddd-estrategico/bounded-contexts.md
+      - Context map: ddd-estrategico/context-map.md
+      - Coesão e problemas de fronteira: ddd-estrategico/coesao-e-fronteiras.md
+  - Arquitetura de Fronteiras:
+      - arquitetura-de-fronteiras/index.md
+      - Anti-Corruption Layer: arquitetura-de-fronteiras/acl.md
+      - Os 8 eixos de auditoria: arquitetura-de-fronteiras/acl-eixos.md
+      - Read ports entre contextos: arquitetura-de-fronteiras/read-ports.md
+      - Eventos entre contextos: arquitetura-de-fronteiras/eventos-entre-contextos.md
+  - Acoplamento:
+      - acoplamento/index.md
+      - Integration strength: acoplamento/integration-strength.md
+      - Distance e volatility: acoplamento/distance-e-volatility.md
+      - Balanceamento: acoplamento/balanceamento.md
+  - Estudos de Caso:
+      - HomeFlix:
+          - estudos-de-caso/homeflix/index.md
+          - Mapa de contextos: estudos-de-caso/homeflix/mapa-de-contextos.md
+          - Auditoria de acoplamento: estudos-de-caso/homeflix/auditoria-de-acoplamento.md
+          - Decisões que valem a leitura: estudos-de-caso/homeflix/decisoes.md
