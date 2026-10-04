@@ -21,7 +21,7 @@ O consumidor depende de detalhes internos que o provedor **nunca desenhou para i
 from src.modules.streaming.infrastructure.streaming._subprocess import with_ffmpeg_threads
 ```
 
-Esse import é real — está no [estudo de caso](../estudos-de-caso/homeflix/auditoria-de-acoplamento.md).
+Esse import existiu no HomeFlix até outubro de 2026. O [estudo de caso](../estudos-de-caso/homeflix/auditoria-de-acoplamento.md) mostra como foi encontrado e removido.
 
 ## 2. Functional
 
