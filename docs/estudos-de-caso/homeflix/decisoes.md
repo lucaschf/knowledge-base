@@ -1,6 +1,6 @@
 # Decisões que valem a leitura
 
-O HomeFlix tem 36 ADRs. Estes seis são os que mais ensinam — não porque acertaram tudo, mas porque mostram o raciocínio, incluindo o que foi recusado e o que ficou para depois.
+O HomeFlix tem 37 ADRs. Estes seis são os que mais ensinam — não porque acertaram tudo, mas porque mostram o raciocínio, incluindo o que foi recusado e o que ficou para depois.
 
 ## ADR-007 — Entidades imutáveis com `with_*`
 

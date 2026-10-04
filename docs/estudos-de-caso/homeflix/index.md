@@ -8,7 +8,7 @@ Ele serve de exemplo para o resto desta base porque é **código público e real
 
 - Monólito modular em Python (FastAPI, SQLAlchemy 2, Pydantic v2) com frontend React separado
 - 11 bounded contexts em `src/modules/`
-- 36 ADRs registrando as decisões de arquitetura
+- 37 ADRs registrando as decisões de arquitetura
 - 150+ endpoints REST e 4.400+ testes
 - Cerca de 800 commits desde janeiro de 2026
 
