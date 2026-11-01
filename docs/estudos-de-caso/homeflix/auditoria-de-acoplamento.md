@@ -1,6 +1,6 @@
 # Auditoria de acoplamento do HomeFlix
 
-Esta nota aplica o [roteiro de balanceamento](../../acoplamento/balanceamento.md) ao HomeFlix, sobre o código de outubro de 2026.
+Esta nota aplica o [roteiro de balanceamento](../../acoplamento/balanceamento.md) ao HomeFlix, sobre o código de novembro de 2026.
 
 ## A regra do projeto
 
@@ -46,7 +46,7 @@ A história explica: até agosto, essa porta morava dentro de `media`. O [ADR-03
 
 | Strength | Distance | Volatility | Diagnóstico |
 |---|---|---|---|
-| Model / Contract | Média | Baixa (Supporting, 8 commits) | 🟢 Equilibrado |
+| Model / Contract | Média | Baixa (Supporting, 10 commits) | 🟢 Equilibrado |
 
 Pelo modelo, esse acoplamento está equilibrado: os DTOs da porta foram desenhados para integração, o `metadata` muda pouco e o par só mudou junto duas vezes. O problema aqui é de **regra**, não de **equilíbrio** — a regra 1 do ADR-009 diz que os tipos da porta pertencem ao consumidor, e aqui pertencem ao provedor.
 

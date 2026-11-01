@@ -8,7 +8,7 @@ Ele serve de exemplo para o resto desta base porque é **código público e real
 
 - Monólito modular em Python (FastAPI, SQLAlchemy 2, Pydantic v2) com frontend React separado
 - 11 bounded contexts em `src/modules/`
-- 37 ADRs registrando as decisões de arquitetura
+- 38 ADRs registrando as decisões de arquitetura
 - 150+ endpoints REST e 4.400+ testes
 - Cerca de 800 commits desde janeiro de 2026
 
@@ -21,7 +21,7 @@ Ele serve de exemplo para o resto desta base porque é **código público e real
 | [Decisões que valem a leitura](decisoes.md) | Seis ADRs e o raciocínio por trás de cada um, incluindo uma recomendação de auditoria que foi recusada — e por quê. |
 
 !!! note "Um estudo honesto"
-    Este não é um caso de sucesso polido. Ele mostra o que está bem resolvido e o que ainda não está: uma regra de fronteira sem trava no CI, uma migração em andamento, trade-offs aceitos de propósito. É o estado real de um sistema mantido por uma pessoa, em outubro de 2026.
+    Este não é um caso de sucesso polido. Ele mostra o que está bem resolvido e o que ainda não está: uma dívida de fronteira congelada no CI em vez de resolvida, uma migração em andamento, trade-offs aceitos de propósito. É o estado real de um sistema mantido por uma pessoa, em novembro de 2026.
 
 ## Links
 

@@ -2,21 +2,21 @@
 
 ## Os onze contextos
 
-A volatilidade abaixo é **medida**: commits por módulo nos seis meses até outubro de 2026, contando só commits que não são merge. A classificação de Streaming e Metadata vem do [ADR-032](https://github.com/lucaschf/homeflix/blob/develop/docs/adr/ADR-032-decompose-media-into-subdomains.md); as demais são minhas, aplicando a [árvore de decisão](../../ddd-estrategico/subdominios.md).
+A volatilidade abaixo é **medida**: commits por módulo nos seis meses até novembro de 2026, contando só commits que não são merge. A classificação de Streaming e Metadata vem do [ADR-032](https://github.com/lucaschf/homeflix/blob/develop/docs/adr/ADR-032-decompose-media-into-subdomains.md); as demais são minhas, aplicando a [árvore de decisão](../../ddd-estrategico/subdominios.md).
 
 | Contexto | Responsabilidade | Subdomínio | Commits (6 meses) |
 |---|---|---|---|
-| **Media catalog** | Filmes, séries, temporadas, episódios; busca, deduplicação | Core | 241 |
+| **Media catalog** | Filmes, séries, temporadas, episódios; busca, deduplicação | Core | 170 |
 | **Identity** | Usuários, perfis, sessões, controle de acesso | Supporting\*\* | 41 |
-| **Collections** | Watchlist e listas personalizadas | Supporting | 36 |
-| **Watch progress** | Posição de reprodução por perfil, "continuar assistindo" | Generic | 34 |
 | **Settings** | Configurações de runtime persistidas em banco | Supporting | 29 |
-| **Library** | Fontes de mídia (pastas) e regras de escaneamento | Supporting | 25 |
+| **Collections** | Watchlist e listas personalizadas | Supporting | 27 |
 | **Catalog requests** | Pedidos de inclusão de títulos e quem os segue | Supporting | 24 |
-| **Preferences** | Idioma, legendas, qualidade, comportamento entre episódios | Supporting | 19 |
+| **Watch progress** | Posição de reprodução por perfil, "continuar assistindo" | Generic | 19 |
+| **Preferences** | Idioma, legendas, qualidade, comportamento entre episódios | Supporting | 13 |
+| **Library** | Fontes de mídia (pastas) e regras de escaneamento | Supporting | 12 |
 | **Notifications** | Entrega de notificações por usuário | Generic | 10 |
-| **Metadata** | Integração com TMDB/OMDb, artwork | Supporting | 8\* |
-| **Streaming** | HLS, transcodificação, legendas por OCR | Generic | 7\* |
+| **Metadata** | Integração com TMDB/OMDb, artwork | Supporting | 10\* |
+| **Streaming** | HLS, transcodificação, legendas por OCR | Generic | 8\* |
 
 \* Metadata e Streaming foram extraídos do catálogo em agosto de 2026, então seis meses de histórico ainda contam pouco para eles.
 
@@ -24,7 +24,7 @@ A volatilidade abaixo é **medida**: commits por módulo nos seis meses até out
 
 ## O que os números dizem
 
-**O catálogo concentra metade da mudança.** Somando os commits de cada módulo, `media` responde por 241 de 474 — cerca de 51%. É o core de fato, não só no rótulo. Esse foi o diagnóstico que levou ao ADR-032: um módulo de cerca de 40 mil linhas soldando subdomínios com volatilidades diferentes. A extração de Streaming e Metadata é a resposta — e os 7 e 8 commits deles mostram a mudança começando a sair do catálogo.
+**O catálogo concentra quase metade da mudança.** Somando os commits de cada módulo, `media` responde por 170 de 363 — cerca de 47%. É o core de fato, não só no rótulo. Esse foi o diagnóstico que levou ao ADR-032: um módulo de cerca de 40 mil linhas soldando subdomínios com volatilidades diferentes. A extração de Streaming e Metadata é a resposta — e os 8 e 10 commits deles mostram a mudança começando a sair do catálogo.
 
 **Generic construído em casa é volátil.** Streaming é *Generic* — Jellyfin e Plex resolvem o mesmo problema. Mesmo assim, foi o subdomínio com mais commits concentrados dentro do catálogo antes da extração. É o exemplo usado em [Distance e volatility](../../acoplamento/distance-e-volatility.md): o rótulo descreve o negócio, o git descreve o custo.
 
@@ -60,15 +60,14 @@ Reações entre contextos vão por eventos em processo:
 
 ## Os pares que mudam juntos
 
-Co-change nos mesmos seis meses — commits que tocaram mais de um módulo:
+Co-change nos mesmos seis meses — commits que tocaram exatamente dois módulos (os que atravessam muitos módulos de uma vez, como refactors gerais, ficam de fora):
 
 | Par | Commits juntos |
 |---|---|
 | Media + Settings | 13 |
-| Media + Watch progress | 6 |
-| Library + Media | 5 |
 | Catalog requests + Media | 5 |
-| Media + Streaming | 4 |
+| Media + Streaming | 5 |
+| Media + Watch progress | 4 |
 | Catalog requests + Notifications | 3 |
 
 O par do topo é o mais interessante, e ele reaparece na [auditoria de acoplamento](auditoria-de-acoplamento.md): `media` importa value objects do domínio de `settings`, e os dois mudam juntos mais do que qualquer outro par.
