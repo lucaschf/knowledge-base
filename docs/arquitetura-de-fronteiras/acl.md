@@ -81,3 +81,4 @@ A auditoria tem oito eixos: tradução vs. decisão, preservação de sinal, def
 - [Context map](../ddd-estrategico/context-map.md)
 - [Boolean Blindness](../modelagem-de-dominio/code-smells/boolean-blindness.md) — o que acontece quando um score vira `bool` na borda
 - [Primitive Obsession](../modelagem-de-dominio/code-smells/primitive-obsession.md)
+- [Auditoria obrigatória](auditoria-fail-closed.md) — fail-closed aplicado à trilha de auditoria, e não ao dado

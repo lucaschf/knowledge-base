@@ -28,7 +28,7 @@ Sou Lucas Cristovam, engenheiro backend focado em arquitetura de software — Py
 
     ---
 
-    Anti-Corruption Layer, read ports e eventos entre contextos. A borda traduz, não decide.
+    Anti-Corruption Layer, read ports, eventos entre contextos e auditoria de chamadas externas. A borda traduz, não decide.
 
     [:octicons-arrow-right-24: Ir para a seção](arquitetura-de-fronteiras/index.md)
 
@@ -53,7 +53,7 @@ Sou Lucas Cristovam, engenheiro backend focado em arquitetura de software — Py
 ## Por onde começar
 
 - **Vindo de DDD tático?** Comece por [Subdomínios](ddd-estrategico/subdominios.md) e depois [Bounded contexts](ddd-estrategico/bounded-contexts.md).
-- **Integrando com APIs externas?** [Anti-Corruption Layer](arquitetura-de-fronteiras/acl.md) e [os 8 eixos de auditoria](arquitetura-de-fronteiras/acl-eixos.md).
+- **Integrando com APIs externas?** [Anti-Corruption Layer](arquitetura-de-fronteiras/acl.md) e [os 8 eixos de auditoria](arquitetura-de-fronteiras/acl-eixos.md). Se cada chamada precisa deixar trilha, [Auditando chamadas externas](arquitetura-de-fronteiras/auditoria-de-chamadas-externas.md).
 - **Desconfiando que os módulos estão acoplados demais?** [Balanceamento](acoplamento/balanceamento.md), e veja o roteiro aplicado na [auditoria do HomeFlix](estudos-de-caso/homeflix/auditoria-de-acoplamento.md).
 
 ## Como esta base funciona
