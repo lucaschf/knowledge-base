@@ -27,6 +27,10 @@ flowchart LR
     A --> EXT["Provider externo<br/>ou outro contexto"]
 ```
 
+## Observando a fronteira
+
+Traduzir não é a única coisa que acontece na borda. Quando cada chamada a um serviço externo precisa deixar trilha, a auditoria também mora ali, e ela tem regras próprias: [auditar com um span](auditoria-de-chamadas-externas.md), que observa a chamada sem nunca mudar o desfecho, e, quando a trilha é obrigatória, [falhar antes da chamada](auditoria-fail-closed.md), e não depois.
+
 ## Relacionados
 
 - [Context map](../ddd-estrategico/context-map.md) — os padrões de integração em nível estratégico

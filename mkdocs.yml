@@ -105,6 +105,8 @@ nav:
       - Os 8 eixos de auditoria: arquitetura-de-fronteiras/acl-eixos.md
       - Read ports entre contextos: arquitetura-de-fronteiras/read-ports.md
       - Eventos entre contextos: arquitetura-de-fronteiras/eventos-entre-contextos.md
+      - Auditando chamadas externas: arquitetura-de-fronteiras/auditoria-de-chamadas-externas.md
+      - Auditoria obrigatória: arquitetura-de-fronteiras/auditoria-fail-closed.md
   - Acoplamento:
       - acoplamento/index.md
       - Integration strength: acoplamento/integration-strength.md
